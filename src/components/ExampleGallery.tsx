@@ -2,12 +2,12 @@
 import React from 'react';
 
 const ExampleGallery = () => {
-  // These would be replaced with actual Ghibli-style images
+  // Updated with actual Ghibli-style images
   const examples = [
-    '/lovable-uploads/8db93427-5c3d-4239-a0c3-05495b74a6d3.png',
-    '/lovable-uploads/8db93427-5c3d-4239-a0c3-05495b74a6d3.png',
-    '/lovable-uploads/8db93427-5c3d-4239-a0c3-05495b74a6d3.png',
-    '/lovable-uploads/8db93427-5c3d-4239-a0c3-05495b74a6d3.png'
+    'https://akm-img-a-in.tosshub.com/indiatoday/images/story/202503/ghibli-style-memes-are-what-the-internet-is-obsessing-over-today-photo-wearenearyoux-273522555-16x9_0.png',
+    'https://economictimes.indiatimes.com/thumb/msid-119638556,width-1200,height-900,resizemode-4,imgsize-2105314/ghibli-art.jpg',
+    'https://images.hindustantimes.com/tech/img/2025/03/28/1600x900/ChatGPT_Ghibli_style_images_1743161814450_1743161814596.jpg',
+    'https://arynews.tv/wp-content/uploads/2025/03/Ghibli-1-696x342.png'
   ];
 
   return (
@@ -17,14 +17,17 @@ const ExampleGallery = () => {
           <div 
             key={index}
             className={`
-              relative rounded-xl overflow-hidden border-4 border-white shadow-xl transform 
+              relative rounded-xl overflow-hidden transform 
               ${index % 2 === 0 ? 'rotate-3' : '-rotate-3'} 
               hover:scale-105 transition-transform duration-300
             `}
             style={{
               width: 'calc(25% - 1rem)',
               maxWidth: '220px',
-              zIndex: 10 - index
+              zIndex: 10 - index,
+              border: '3px solid #000',
+              boxShadow: '3px 3px 0 #000',
+              backgroundClip: 'padding-box'
             }}
           >
             <img 

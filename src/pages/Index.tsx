@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 import Header from '@/components/Header';
@@ -8,7 +7,7 @@ import RevealCountdown from '@/components/RevealCountdown';
 import PrankReveal from '@/components/PrankReveal';
 import ShareDialog from '@/components/ShareDialog';
 import ExampleGallery from '@/components/ExampleGallery';
-import { motion } from 'framer-motion'; // Note: Framer Motion would need to be installed
+import { motion } from 'framer-motion'; // Note: Framer Motion would need to be installed'
 
 enum AppState {
   UPLOAD,
@@ -44,7 +43,7 @@ const Index = () => {
   };
   
   return (
-    <div className="min-h-screen flex flex-col bg-undrads-bg">
+    <div className="min-h-screen flex flex-col bg-blue-50">
       <Header showVideo={appState === AppState.REVEAL} />
       
       <main className="flex-1 container mx-auto px-4 py-8">
@@ -91,7 +90,10 @@ const Index = () => {
           
           {appState === AppState.PROCESSING && (
             <div className="animate-fade-in mt-8">
-              <ProcessingAnimation onComplete={handleProcessingComplete} />
+              <ProcessingAnimation onComplete={() => {
+                // Reduce processing time by calling onComplete sooner
+                setTimeout(handleProcessingComplete, 2000);
+              }} />
             </div>
           )}
           

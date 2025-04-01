@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ showVideo }) => {
   return (
-    <header className="w-full py-6 px-6 bg-undrads-bg">
+    <header className="w-full py-6 px-6 bg-blue-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <img 
@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ showVideo }) => {
         {showVideo && (
           <div className="hidden md:block">
             <Button 
-              className="text-sm rounded-full font-medium bg-lime-400 hover:bg-lime-500 text-gray-800 border-2 border-lime-500 shadow-md transform hover:-translate-y-1 transition-all" 
+              className="text-sm rounded-full font-medium bg-[#2563EB] hover:bg-[#1E40AF] text-white border-2 border-blue-700 shadow-md transform hover:-translate-y-1 transition-all" 
               onClick={() => window.open("https://undrads.com", "_blank")}
             >
               Generate Now
