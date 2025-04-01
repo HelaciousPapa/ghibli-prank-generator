@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 import Header from '@/components/Header';
@@ -68,22 +69,20 @@ const Index = () => {
               <ExampleGallery />
               
               <div className="mb-8 text-center">
-                <h1 className="text-5xl md:text-6xl font-bold mb-4 font-comic" style={{
+                <h1 className="text-5xl md:text-6xl font-bold mb-4 font-comic text-[#2563EB]" style={{
                   textShadow: '3px 3px 0 #000',
-                  color: 'white'
                 }}>
                   Ghibli Art Generator
                 </h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Transform your photos into magical Ghibli-style artwork with our advanced AI technology
+                  Why just ads? We can even make your visuals look great. Let's add that anime touch now ⬇️
                 </p>
               </div>
               
               <ImageUploader onImageSelect={handleImageSelect} />
               
               <div className="mt-8 text-center text-sm text-gray-500">
-                <p>Create beautiful, shareable Ghibli-style art in seconds</p>
-                <p className="mt-1">Powered by UndrAds Technology</p>
+                <p>Disclaimer. The results will surprise you. Powered by UndrAds.</p>
               </div>
             </div>
           )}
@@ -112,7 +111,7 @@ const Index = () => {
       </main>
       
       <footer className="py-4 text-center text-sm text-gray-500 bg-white border-t">
-        <p>© 2023 UndrAds - Helping publishers earn more through optimized ad placements</p>
+        <p>© 2023 UndrAds. Ad optimizers at ❤️.</p>
       </footer>
       
       <ShareDialog 

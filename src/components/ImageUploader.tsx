@@ -3,7 +3,6 @@ import React, { useState, useRef } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Upload, ImageIcon } from 'lucide-react';
 
 interface ImageUploaderProps {
@@ -67,14 +66,11 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelect }) => {
   
   return (
     <div className="max-w-md mx-auto">
-      <Card className="border-4 border-dashed border-black bg-white/90 relative overflow-visible" style={{
-        borderRadius: '8px',
-        boxShadow: '8px 8px 0 rgba(0, 0, 0, 0.75)'
-      }}>
+      <Card className="sketchy bg-white/90 relative overflow-visible">
         <CardContent className="p-6">
           <div className="space-y-6">
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">Upload Your Photo</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">Upload Image</h2>
               <p className="text-gray-600">Drag & drop or click to select a photo to transform</p>
             </div>
             
@@ -117,9 +113,9 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelect }) => {
             <Button 
               onClick={handleSubmit}
               disabled={!selectedFile}
-              className="w-full py-6 rounded-full font-medium bg-gradient-to-r from-undrads-lightBlue to-undrads-blue text-white border-2 border-blue-700 shadow-md transform hover:-translate-y-1 transition-all"
+              className="w-full py-6 rounded-full font-medium bg-[#2563EB] text-white border-2 border-blue-700 shadow-md transform hover:-translate-y-1 transition-all"
             >
-              <Upload className="mr-2 h-5 w-5" /> Upload Photo
+              <Upload className="mr-2 h-5 w-5" /> Upload Image
             </Button>
           </div>
         </CardContent>

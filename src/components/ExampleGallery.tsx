@@ -22,8 +22,8 @@ const ExampleGallery = () => {
               hover:scale-105 transition-transform duration-300
             `}
             style={{
-              width: 'calc(25% - 1rem)',
-              maxWidth: '220px',
+              width: 'calc(28% - 1rem)',
+              maxWidth: '250px',
               zIndex: 10 - index,
               border: '3px solid #000',
               boxShadow: '3px 3px 0 #000',
