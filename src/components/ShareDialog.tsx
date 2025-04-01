@@ -51,9 +51,9 @@ const ShareDialog: React.FC<ShareDialogProps> = ({ isOpen, onOpenChange }) => {
   
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sketchy sm:max-w-md bg-white/90 relative overflow-visible border-2 border-black">
         <DialogHeader>
-          <DialogTitle>Share This Prank</DialogTitle>
+          <DialogTitle className="text-[#2563EB]">Share This Prank</DialogTitle>
           <DialogDescription>
             Send this to your friends and see if they fall for it too!
           </DialogDescription>
@@ -67,7 +67,7 @@ const ShareDialog: React.FC<ShareDialogProps> = ({ isOpen, onOpenChange }) => {
               className="text-sm"
             />
           </div>
-          <Button size="sm" onClick={copyToClipboard} className="px-3">
+          <Button size="sm" onClick={copyToClipboard} className="px-3 bg-[#2563EB]">
             {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
           </Button>
         </div>
@@ -75,19 +75,19 @@ const ShareDialog: React.FC<ShareDialogProps> = ({ isOpen, onOpenChange }) => {
         <div className="flex flex-col sm:flex-row gap-3 mt-4">
           <Button 
             onClick={() => shareOnSocialMedia('twitter')}
-            className="bg-[#1DA1F2] hover:bg-[#1a94e0] text-white"
+            className="bg-[#2563EB] hover:bg-[#2563EB]/90 text-white"
           >
             <Share className="mr-2 h-4 w-4" /> Twitter
           </Button>
           <Button 
             onClick={() => shareOnSocialMedia('facebook')}
-            className="bg-[#4267B2] hover:bg-[#375695] text-white"
+            className="bg-[#2563EB] hover:bg-[#2563EB]/90 text-white"
           >
             <Share className="mr-2 h-4 w-4" /> Facebook
           </Button>
           <Button 
             onClick={() => shareOnSocialMedia('whatsapp')}
-            className="bg-[#25D366] hover:bg-[#1eb959] text-white"
+            className="bg-[#2563EB] hover:bg-[#2563EB]/90 text-white"
           >
             <Share className="mr-2 h-4 w-4" /> WhatsApp
           </Button>

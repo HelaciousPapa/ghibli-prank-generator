@@ -27,17 +27,17 @@ const RevealCountdown: React.FC<RevealCountdownProps> = ({ onReveal }) => {
   }, [countdown, isReady, onReveal]);
   
   return (
-    <Card className="w-full max-w-md mx-auto border-ghibli-blue/30">
+    <Card className="sketchy w-full max-w-md mx-auto bg-white/90 relative overflow-visible">
       <CardContent className="pt-6">
         <div className="space-y-6 text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">Your Ghibli Art is Ready!</h2>
+          <h2 className="text-3xl font-bold text-[#2563EB] mb-2">Your Ghibli Art is Ready!</h2>
           
           {!isReady ? (
             <div className="space-y-4">
               <p className="text-xl text-gray-700">Are you ready to see your masterpiece?</p>
               <Button 
                 onClick={() => setIsReady(true)}
-                className="bg-gradient-to-r from-ghibli-pink to-ghibli-blue hover:opacity-90 transition-opacity px-6 py-2 text-lg"
+                className="w-full py-6 rounded-full font-medium bg-[#2563EB] text-white border-2 border-blue-700 shadow-md transform hover:-translate-y-1 transition-all"
               >
                 Yes, show me!
               </Button>
@@ -46,7 +46,7 @@ const RevealCountdown: React.FC<RevealCountdownProps> = ({ onReveal }) => {
             <div className="space-y-6">
               <p className="text-xl text-gray-700">Get ready! Revealing in...</p>
               <div className="flex items-center justify-center">
-                <div className="text-6xl font-bold bg-gradient-to-r from-ghibli-orange to-ghibli-pink bg-clip-text text-transparent animate-bounce-subtle">
+                <div className="text-6xl font-bold text-[#2563EB] animate-bounce-subtle">
                   {countdown === 0 ? "🎨" : countdown}
                 </div>
               </div>

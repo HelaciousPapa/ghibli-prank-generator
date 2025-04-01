@@ -49,25 +49,22 @@ const ProcessingAnimation: React.FC<ProcessingAnimationProps> = ({ onComplete })
   }, [onComplete]);
   
   return (
-    <Card className="w-full max-w-md mx-auto border-4 border-dashed border-black bg-white/90" style={{
-      borderRadius: '8px',
-      boxShadow: '8px 8px 0 rgba(0, 0, 0, 0.75)'
-    }}>
+    <Card className="sketchy w-full max-w-md mx-auto bg-white/90 relative overflow-visible">
       <CardContent className="pt-6 p-6">
         <div className="space-y-6">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">Creating Your Ghibli Artwork</h2>
+            <h2 className="text-2xl font-bold text-[#2563EB] mb-2">Creating Your Ghibli Artwork</h2>
             <p className="text-gray-600">Our AI is working its magic. This may take a moment...</p>
           </div>
           
           <div className="space-y-4">
-            <div className="h-32 w-full bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden relative">
+            <div className="h-32 w-full bg-blue-50 rounded-lg flex items-center justify-center overflow-hidden relative">
               <div className="flex flex-col items-center justify-center space-y-3 z-10">
                 <div className="flex space-x-2">
                   {[...Array(3)].map((_, i) => (
                     <div 
                       key={i} 
-                      className="w-3 h-3 rounded-full bg-undrads-blue animate-bounce" 
+                      className="w-3 h-3 rounded-full bg-[#2563EB] animate-bounce" 
                       style={{ animationDelay: `${i * 0.15}s` }}
                     />
                   ))}
@@ -79,7 +76,7 @@ const ProcessingAnimation: React.FC<ProcessingAnimationProps> = ({ onComplete })
             <div className="space-y-2">
               <Progress value={progress} className="h-3 bg-gray-200">
                 <div 
-                  className="h-full rounded-full bg-gradient-to-r from-undrads-lightBlue to-undrads-blue" 
+                  className="h-full rounded-full bg-[#2563EB]" 
                   style={{ width: `${progress}%` }}
                 />
               </Progress>
