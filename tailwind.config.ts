@@ -21,6 +21,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'poppins': ['Poppins', 'sans-serif'],
+				'comic': ['"Comic Neue"', 'cursive'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -72,6 +73,11 @@ export default {
 					'pink': '#FDCEDF',
 					'yellow': '#FEF7CD',
 					'orange': '#FEC6A1'
+				},
+				undrads: {
+					'blue': '#2563EB',
+					'lightBlue': '#0FA8FF',
+					'bg': '#F0F7E6'
 				}
 			},
 			borderRadius: {
@@ -107,6 +113,10 @@ export default {
 				'bounce-subtle': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0) rotate(-3deg)' },
+					'50%': { transform: 'translateY(-10px) rotate(3deg)' }
 				}
 			},
 			animation: {
@@ -114,7 +124,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'bounce-subtle': 'bounce-subtle 2s ease infinite'
+				'bounce-subtle': 'bounce-subtle 2s ease infinite',
+				'float': 'float 6s ease-in-out infinite'
 			}
 		}
 	},

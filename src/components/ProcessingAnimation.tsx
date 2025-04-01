@@ -17,15 +17,14 @@ const ProcessingAnimation: React.FC<ProcessingAnimationProps> = ({ onComplete })
       "Extracting color palette...",
       "Applying Ghibli style transfer...",
       "Adding magical elements...",
-      "Enhancing details...",
-      "Creating final artwork...",
-      "Almost there..."
+      "Creating final artwork..."
     ];
     
     let currentIndex = 0;
+    // Reduce the interval time to speed up the process
     const intervalId = setInterval(() => {
       setProgress((prevProgress) => {
-        const newProgress = prevProgress + (100 - prevProgress) * 0.1;
+        const newProgress = prevProgress + (100 - prevProgress) * 0.15; // Increased speed
         
         // Update status message based on progress
         if (newProgress > 15 && currentIndex < messages.length - 1) {
@@ -34,39 +33,41 @@ const ProcessingAnimation: React.FC<ProcessingAnimationProps> = ({ onComplete })
         }
         
         // Complete when close to 100%
-        if (newProgress > 98) {
+        if (newProgress > 95) {
           clearInterval(intervalId);
           setTimeout(() => {
             setProgress(100);
-            setTimeout(onComplete, 500);
-          }, 500);
+            setTimeout(onComplete, 300); // Reduced wait time
+          }, 300); // Reduced delay
         }
         
         return newProgress;
       });
-    }, 800);
+    }, 500); // Reduced interval from 800ms to 500ms
     
     return () => clearInterval(intervalId);
   }, [onComplete]);
   
   return (
-    <Card className="w-full max-w-md mx-auto border-ghibli-blue/30">
-      <CardContent className="pt-6">
+    <Card className="w-full max-w-md mx-auto border-4 border-dashed border-black bg-white/90" style={{
+      borderRadius: '8px',
+      boxShadow: '8px 8px 0 rgba(0, 0, 0, 0.75)'
+    }}>
+      <CardContent className="pt-6 p-6">
         <div className="space-y-6">
           <div className="text-center">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-2">Creating Your Ghibli Artwork</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">Creating Your Ghibli Artwork</h2>
             <p className="text-gray-600">Our AI is working its magic. This may take a moment...</p>
           </div>
           
           <div className="space-y-4">
-            <div className="h-32 w-full bg-ghibli-blue/10 rounded-lg flex items-center justify-center overflow-hidden relative">
-              <div className="absolute inset-0 ghibli-bg opacity-10"></div>
+            <div className="h-32 w-full bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden relative">
               <div className="flex flex-col items-center justify-center space-y-3 z-10">
                 <div className="flex space-x-2">
                   {[...Array(3)].map((_, i) => (
                     <div 
                       key={i} 
-                      className="w-3 h-3 rounded-full bg-ghibli-blue animate-bounce" 
+                      className="w-3 h-3 rounded-full bg-undrads-blue animate-bounce" 
                       style={{ animationDelay: `${i * 0.15}s` }}
                     />
                   ))}
@@ -76,7 +77,12 @@ const ProcessingAnimation: React.FC<ProcessingAnimationProps> = ({ onComplete })
             </div>
             
             <div className="space-y-2">
-              <Progress value={progress} className="progress-bar from-ghibli-blue via-ghibli-green to-ghibli-pink" />
+              <Progress value={progress} className="h-3 bg-gray-200">
+                <div 
+                  className="h-full rounded-full bg-gradient-to-r from-undrads-lightBlue to-undrads-blue" 
+                  style={{ width: `${progress}%` }}
+                />
+              </Progress>
               <p className="text-xs text-gray-500 text-right">{Math.round(progress)}% complete</p>
             </div>
           </div>

@@ -8,21 +8,23 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ showVideo }) => {
   return (
-    <header className="w-full py-4 px-6 bg-white shadow-sm">
+    <header className="w-full py-6 px-6 bg-undrads-bg">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-ghibli-blue rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-xs">U</span>
-          </div>
-          <h1 className="text-xl font-bold bg-gradient-to-r from-ghibli-blue to-ghibli-green bg-clip-text text-transparent">
-            UndrAds Ghibli Generator
-          </h1>
+          <img 
+            src="https://undrads.com/static/images/general/main_logo.svg" 
+            alt="UndrAds Logo" 
+            className="h-8 md:h-10" 
+          />
         </div>
         
         {showVideo && (
           <div className="hidden md:block">
-            <Button variant="outline" className="text-sm" onClick={() => window.open("https://undrads.com", "_blank")}>
-              Learn About UndrAds
+            <Button 
+              className="text-sm rounded-full font-medium bg-lime-400 hover:bg-lime-500 text-gray-800 border-2 border-lime-500 shadow-md transform hover:-translate-y-1 transition-all" 
+              onClick={() => window.open("https://undrads.com", "_blank")}
+            >
+              Generate Now
             </Button>
           </div>
         )}

@@ -7,6 +7,8 @@ import ProcessingAnimation from '@/components/ProcessingAnimation';
 import RevealCountdown from '@/components/RevealCountdown';
 import PrankReveal from '@/components/PrankReveal';
 import ShareDialog from '@/components/ShareDialog';
+import ExampleGallery from '@/components/ExampleGallery';
+import { motion } from 'framer-motion'; // Note: Framer Motion would need to be installed
 
 enum AppState {
   UPLOAD,
@@ -42,7 +44,7 @@ const Index = () => {
   };
   
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-ghibli-blue/10">
+    <div className="min-h-screen flex flex-col bg-undrads-bg">
       <Header showVideo={appState === AppState.REVEAL} />
       
       <main className="flex-1 container mx-auto px-4 py-8">
@@ -63,9 +65,14 @@ const Index = () => {
         
         <div className="max-w-4xl mx-auto">
           {appState === AppState.UPLOAD && (
-            <div className="animate-fade-in">
+            <div className="animate-fade-in space-y-8">
+              <ExampleGallery />
+              
               <div className="mb-8 text-center">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-ghibli-blue via-ghibli-green to-ghibli-pink bg-clip-text text-transparent">
+                <h1 className="text-5xl md:text-6xl font-bold mb-4 font-comic" style={{
+                  textShadow: '3px 3px 0 #000',
+                  color: 'white'
+                }}>
                   Ghibli Art Generator
                 </h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -83,19 +90,19 @@ const Index = () => {
           )}
           
           {appState === AppState.PROCESSING && (
-            <div className="animate-fade-in">
+            <div className="animate-fade-in mt-8">
               <ProcessingAnimation onComplete={handleProcessingComplete} />
             </div>
           )}
           
           {appState === AppState.COUNTDOWN && (
-            <div className="animate-fade-in">
+            <div className="animate-fade-in mt-8">
               <RevealCountdown onReveal={handleReveal} />
             </div>
           )}
           
           {appState === AppState.REVEAL && (
-            <div className="animate-fade-in">
+            <div className="animate-fade-in mt-8">
               <PrankReveal onShareClick={handleShareClick} />
             </div>
           )}
