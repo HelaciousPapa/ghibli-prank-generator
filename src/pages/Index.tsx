@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 import Header from '@/components/Header';
@@ -8,7 +7,7 @@ import RevealCountdown from '@/components/RevealCountdown';
 import PrankReveal from '@/components/PrankReveal';
 import ShareDialog from '@/components/ShareDialog';
 import ExampleGallery from '@/components/ExampleGallery';
-import { motion } from 'framer-motion'; // Note: Framer Motion would need to be installed'
+import { motion } from 'framer-motion';
 
 enum AppState {
   UPLOAD,
@@ -69,9 +68,7 @@ const Index = () => {
               <ExampleGallery />
               
               <div className="mb-8 text-center">
-                <h1 className="text-5xl md:text-6xl font-bold mb-4 font-comic text-[#2563EB]" style={{
-                  textShadow: '3px 3px 0 #000',
-                }}>
+                <h1 className="text-5xl md:text-6xl font-bold mb-4 anime-title text-[#2563EB]">
                   Ghibli Art Generator
                 </h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">

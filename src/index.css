@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 @layer base {
   :root {
@@ -137,5 +138,11 @@
     transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
     border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
     pointer-events: none;
+  }
+  
+  .anime-title {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
 }
